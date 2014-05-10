@@ -5,7 +5,16 @@ import java.util.ArrayList;
 public class Curso {
   private String codigo;
   private String nombre;
+  private int capacidad;
   private ArrayList<Alumno> alumnos = new ArrayList<>();
+  
+  public void setCapacidad(int capacidadRecibida){
+      capacidad = capacidadRecibida;
+  }
+  
+  public int calcularVacantes(){
+      return capacidad - alumnos.size();
+  }
   
   public void setCodigo(String codigoRecibido){
     codigo = codigoRecibido;  
@@ -24,7 +33,9 @@ public class Curso {
   }
   
   public void matricularAlumno(Alumno alumno){
-      alumnos.add(alumno);
+      if (this.calcularVacantes() > 0){
+        alumnos.add(alumno);
+      }
   }
   
   public String ListaDeMatriculados(){
