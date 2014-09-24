@@ -2,31 +2,17 @@ package veterinaria;
 
 public abstract class Mascota {
     protected String nombre;
+    protected int edad;
     protected String raza;
 
-    public Mascota() {
-    }
-    
-    public Mascota(String nombre) {
+    public Mascota(String nombre, int edad) {
         this.nombre = nombre;
+        this.edad = edad;
     }
-    
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getRaza() {
-        return raza;
-    }
-
-    public void setRaza(String raza) {
-        this.raza = raza;
-    }
-    
+            
     public abstract String comunicarse();
     
+    public String presentarse(){
+        return "Me llamo " + nombre + " soy un ";
+    } 
 }
