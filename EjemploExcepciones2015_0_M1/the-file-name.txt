@@ -1,0 +1,2 @@
+Se ha divido entre 0 dos enteros!!! eso es un error
+/ by zero
